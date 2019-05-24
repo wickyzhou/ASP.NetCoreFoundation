@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="1\**" />
+    <Compile Remove="2\**" />
+    <Content Remove="1\**" />
+    <Content Remove="2\**" />
+    <EmbeddedResource Remove="1\**" />
+    <EmbeddedResource Remove="2\**" />
+    <None Remove="1\**" />
+    <None Remove="2\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Control\" />
+  </ItemGroup>
+
+</Project>
