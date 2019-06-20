@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ContosoUniversity.Models;
 using Microsoft.Extensions.DependencyInjection;
+using ContosoUniversity.Data;
 
 namespace ContosoUniversity
 {

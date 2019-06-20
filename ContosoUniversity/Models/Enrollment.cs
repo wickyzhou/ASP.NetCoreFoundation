@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,6 +14,7 @@ namespace ContosoUniversity.Models
 
         public int CourseID { get; set; }//外键格式2： 导航属性类的主键【Course 的主键是 CourceID】
 
+        [DisplayFormat(NullDisplayText ="no grade")]
         public Grade? Grade { get; set; }
 
 

@@ -1,0 +1,77 @@
+﻿@page
+@model ContosoUniversity.Pages.Courses.IndexModel
+
+@{
+    ViewData["Title"] = "Courses";
+}
+
+    <h2>Courses</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseVM[0].CourseID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseVM[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseVM[0].Credits)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseVM[0].ModifyDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseVM[0].ModifyTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseVM[0].MoneySecurity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseVM[0].DepartmentName)
+            </th>
+            <th style="width:200px">操作</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CourseVM) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseID)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Credits)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifyDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifyTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoneySecurity)
+            </td>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.Department.DepartmentID) 此处就可以直接显示名字，因为cshtml.cs后台代码文件中已预先加载了Courses
+        </td>*@
+
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmentName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CourseID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CourseID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CourseID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
